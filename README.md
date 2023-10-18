@@ -1,10 +1,10 @@
 ## 0x1B. C - Sorting algorithms & Big O
-#### `C Algorithm Data structure`
+#### `C` `Algorithm` `Data structure`
  * By: Alexandre Gautier
  * Weight: 2
- Project to be done in teams of 2 people (your team: Tekoh Palma ACHU, Samuel Ejalonibu)
- Project will start Oct 18, 2023 4:00 AM, must end by Oct 25, 2023 4:00 AM
- Checker will be released at Oct 19, 2023 10:00 PM
+ * Project to be done in teams of 2 people (your team: Tekoh Palma ACHU, Samuel Ejalonibu)
+ * Project will start Oct 18, 2023 4:00 AM, must end by Oct 25, 2023 4:00 AM
+ * Checker will be released at Oct 19, 2023 10:00 PM
  An auto review will be launched at the deadline
 
 ![IMG](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/248/willy-wonka.png)
