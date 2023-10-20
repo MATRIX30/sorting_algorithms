@@ -2,6 +2,7 @@
 /**
 * bubble_sort - algorithm to sort elements
 * @size: the size of the array ie
+* @array: array to use for search operations
 */
 void bubble_sort(int *array, size_t size)
 {
