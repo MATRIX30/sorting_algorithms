@@ -1,9 +1,10 @@
 #include "sort.h"
 /**
 * bubble_sort - algorithm to sort elements
-* @size: the size of the array ie
 * @array: array to use for search operations
+* @size: the size of the array ie
 */
+
 void bubble_sort(int *array, size_t size)
 {
 	int swap = -1, tmp;
@@ -12,7 +13,7 @@ void bubble_sort(int *array, size_t size)
 	while (swap != 0)
 	{
 		swap = 0;
-		for (i = 0; i < size; i++)
+		for (i = 0; i + 1 < size; i++)
 		{
 			/* verify if item at i is > than item at i + 1*/
 			/*then swap and  set counter to*/

@@ -1,7 +1,7 @@
 #ifndef SORT_HEADER
 #define SORT_HEADER
 /*include neccessary libraries*/
-#include <stdlib.h>
+#include <stddef.h>
 
 
 /* Data structures*/
