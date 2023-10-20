@@ -1,5 +1,8 @@
 #ifndef SORT_HEADER
 #define SORT_HEADER
+/*include neccessary libraries*/
+#include <stdlib.h>
+
 
 /* Data structures*/
 /**
@@ -17,8 +20,8 @@ typedef struct listint_s
 } listint_t;
 
 
-
-
+/*sorting algorithms*/
+void bubble_sort(int *array, size_t size);
 
 
 
