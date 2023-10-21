@@ -24,11 +24,6 @@ typedef struct listint_s
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
-<<<<<<< HEAD
-=======
-
-
->>>>>>> df584ea7d9a70e143f5a5b0ae10c20b12c26d298
 
 /* print functions*/
 void print_list(const listint_t *list);
