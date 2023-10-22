@@ -15,6 +15,11 @@ void counting_sort(int *array, size_t size)
 	/* number in array*/
 	/*determine the size of count array*/
 
+	if (size < 2)
+	{
+		return;
+	}
+
 	for (i = 0; i < size; i++)
 	{
 		if (array[i] > max_num)
