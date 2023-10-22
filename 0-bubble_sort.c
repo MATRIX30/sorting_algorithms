@@ -18,7 +18,7 @@ void bubble_sort(int *array, size_t size)
 		for (i = 0; i + 1 < size; i++)
 		{
 			/* verify if item at i is > than item at i + 1*/
-			/*then swap and  set counter to*/
+			/*then swap and  increment swap variable by 1*/
 
 			if (array[i] > array[i + 1])
 			{
