@@ -82,13 +82,14 @@ void merge_sort(int *array, size_t size)
 	{
 		left[i] = array[i];
 	}
-	right = &array[mid];
+
 
 	/*mergesort the left and right sides*/
 	merge_sort(left, mid);
+	right = &array[mid];
 	merge_sort(right, size - mid);
 
 	/*merge the final result*/
 	merge(array, left, mid, right, size - mid);
-
+	free(left);
 }
