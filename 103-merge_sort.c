@@ -1,51 +1,52 @@
 #include "sort.h"
+void merge_sort(int *array, size_t size);
 
 /**
 * merge - method to merge two sorted arrays
 * @array: final array to merge results
 * @left: left array
-* @size_left: the size of the left array
+* @size_l: the size of the left array
 * @right: right array to be merged
-* @size_right: size of right array
+* @size_r: size of right array
 */
-void merge(int *array, int *left, size_t size_left, int *right, size_t size_right)
+void merge(int *array, int *left, size_t size_l, int *right, size_t size_r)
 {
 	size_t i = 0, j = 0, k = 0;
 
 	printf("Merging...\n");
 	printf("[left]: ");
-	print_array(left, size_left);
+	print_array(left, size_l);
 	printf("[right]: ");
-	print_array(right, size_right);
-	while (i < size_left && j < size_right)
+	print_array(right, size_r);
+	while (i < size_l && j < size_r)
 	{
-		
+
 		if (left[i] <= right[j])
 		{
 			/*assign elent at i of left to position k of array */
 			/*and increement both k and i by 1*/
 			array[k++] = left[i++];
-			
+
 		}
 		else
 		{
 			array[k++] = right[j++];
-			
+
 		}
 	}
 	/*incase any left or right gets copied all then just copy*/
 	/* rest of the other without doing any comparisons*/
-	while( j< size_right)
+	while (j < size_r)
 	{
 		array[k++] = right[j++];
 	}
-	while (i < size_left)
+	while (i < size_l)
 	{
 		array[k++] = left[i++];
 	}
 	printf("[Done]: ");
-	print_array(array, size_left + size_right);
-	
+	print_array(array, size_l + size_r);
+
 }
 /**
 * merge_sort - sorts an array using merge sort
@@ -58,6 +59,7 @@ void merge_sort(int *array, size_t size)
 	size_t mid;
 	int *left, *right;
 	size_t i;
+
 	if (size < 2)
 	{
 		return;
@@ -65,7 +67,7 @@ void merge_sort(int *array, size_t size)
 
 	/*calculate the mid- point*/
 	mid = size / 2;
-	/* create left and right arrays*/;
+	/* create left and right arrays*/
 
 	left = malloc(mid  * sizeof(int));
 
