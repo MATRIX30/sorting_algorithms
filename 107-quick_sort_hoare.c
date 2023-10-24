@@ -15,7 +15,8 @@ int hoare_partion(int *array, size_t size, int low, int high)
 	int tmp;
 
 	piv = array[high];
-	while (1)
+
+	while (1 && low < high)
 	{
 		do {
 			i++;
@@ -26,7 +27,7 @@ int hoare_partion(int *array, size_t size, int low, int high)
 
 		if (i >= j)
 		{
-			return (j);
+			return (i);
 		}
 		/* swapping phase*/
 		tmp = array[i];
@@ -35,7 +36,7 @@ int hoare_partion(int *array, size_t size, int low, int high)
 
 		print_array(array, size);
 	}
-
+	return (j);
 }
 
 /**
