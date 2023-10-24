@@ -1,48 +1,62 @@
 #include "sort.h"
 /**
 * hoare_partion - performs hoare partition scheme on the array
-* 
+* @array: array to be sorted
+* @size: the size of the array
+* @low: index of first element in array
+* @high: index of last eleement in array
+* Return: the index of the pivot element
 */
-size_t hoare_partion(int *array, size_t low, size_t high)
+int hoare_partion(int *array, size_t size, int low, int high)
 {
-	size_t piv, i = low, j = high;
+	int piv;
+	int i = low - 1;
+	int j = high + 1;
 	int tmp;
 
 	piv = array[high];
-	while (i <= j)
+	while (1)
 	{
-		if (array[i] >= array[j])
+		do {
+			i++;
+		} while (array[i] < piv);
+		do {
+			j--;
+		} while (array[j] > piv);
+
+		if (i >= j)
 		{
-			tmp = array[i];
-			array[i] = array[j];
-			array[j] = tmp;
+			return (j);
 		}
-		i += 1;
-		j -= 1;
+		/* swapping phase*/
+		tmp = array[i];
+		array[i] = array[j];
+		array[j] = tmp;
+
+		print_array(array, size);
 	}
-	tmp = array[i];
-	array[i] = array[size - 1];
-	array[size - 1] = tmp;
-	return i; 
 
 }
 
 /**
-* quick_sort_hoare_helper - helper function for quick_sort_hoare that takes 
-* expected parameters
-* @array: the array to be sorted
-* @low: lower index of the array
-* @high: upper index of the array
+* quick_sort_hoare_helper - a wrapper to quick_sort that enables
+* us take more parameters
+* @array: array to be sorted
+* @size: the size of the array
+* @low: index of first element in array
+* @high: index of last eleement in array
+* Return: the index of the pivot element
 */
-quick_sort_hoare_helper(int *array, size_t low, size_t high)
+void quick_sort_hoare_helper(int *array, size_t size, int low, int high)
 {
+	int piv;
+
 	if (low < high)
 	{
-		m = hoare_partion(array, size);
-		quick_sort_hoare_helper(array, 0, m);
-		quick_sort_hoare_helper(array, m + 1, size);
+		piv = hoare_partion(array, size, low, high);
+		quick_sort_hoare_helper(array, size, low, piv - 1);
+		quick_sort_hoare_helper(array, size, piv, high);
 	}
-
 }
 
 /**
@@ -53,11 +67,10 @@ quick_sort_hoare_helper(int *array, size_t low, size_t high)
 */
 void quick_sort_hoare(int *array, size_t size)
 {
-
 	/*verify if sequence is < 2*/
-	if (size < 2)
+	if (array == NULL || size < 2)
 	{
 		return;
 	}
-	quick_sort_hoare_helper(array, 0, size - 1);
+	quick_sort_hoare_helper(array, size, 0, size - 1);
 }
