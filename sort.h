@@ -42,8 +42,4 @@ void sort_deck(deck_node_t **deck);
 void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
 
-
-
-
-
 #endif
