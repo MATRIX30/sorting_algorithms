@@ -3,7 +3,7 @@
 
 
 /**
- * init_bucket_count - resets bucket_count values to 0
+ * buck_count - resets bucket_count values to 0
  * @bucket_count: array containing amounts of members for arrays in `buckets`
  */
 void buck_count(int *bucket_count)
